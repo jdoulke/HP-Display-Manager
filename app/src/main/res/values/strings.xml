@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">HP Display Manager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="monitors">Monitors</string>
+    <string name="desktops">Desktops</string>
+    <string name="printers">Printers</string>
+    <string name="laptops">Laptops</string>
+    <string name="minus">minus</string>
+    <string name="plus">plus</string>
+    <string name="hp_primary_string">0</string>
+    <string name="hp_secondary_string">0</string>
+    <string name="toshiba">Toshiba</string>
+    <string name="clear">Clear</string>
+    <string name="deskjets">Deskjets</string>
+</resources>

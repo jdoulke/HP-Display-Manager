@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/laptops"
+        android:icon="@drawable/baseline_laptop_24"
+        android:title="@string/laptops" />
+    <item
+        android:id="@+id/printers"
+        android:icon="@drawable/baseline_print_24"
+        android:title="@string/printers" />
+    <item
+        android:id="@+id/desktops"
+        android:icon="@drawable/pc_case"
+        android:title="@string/desktops" />
+    <item
+        android:id="@+id/monitors"
+        android:icon="@drawable/baseline_monitor_24"
+        android:title="@string/monitors" />
+</menu>

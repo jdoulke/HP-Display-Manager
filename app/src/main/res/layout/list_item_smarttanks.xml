@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/material_on_background_disabled">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Canon -->
+        <TextView
+            android:id="@+id/smarttanks_canon_manufacturer"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Canon"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_manufacturer" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_canon_minus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_manufacturer"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_minus_primary"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_canon_string_primary"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_minus_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_string_primary"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_canon_plus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_string_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_plus_primary"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_canon_minus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_plus_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_minus_secondary"
+            tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_canon_string_secondary"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_minus_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_string_secondary"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_canon_plus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_canon_string_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_epson_plus_secondary"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <!-- Epson -->
+        <TextView
+            android:id="@+id/smarttanks_epson_manufacturer"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Epson"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_manufacturer" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_epson_minus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_manufacturer"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_minus_primary"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_epson_string_primary"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_minus_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_string_primary"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_epson_plus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_string_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_plus_primary"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_epson_minus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_plus_primary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_minus_secondary"
+            tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_epson_string_secondary"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_minus_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_string_secondary"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_epson_plus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_epson_string_secondary"
+            app:layout_constraintTop_toBottomOf="@+id/smarttanks_hp_plus_secondary"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <!-- HP -->
+        <TextView
+            android:id="@+id/smarttanks_hp_manufacturer"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="HP"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_hp_minus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_manufacturer"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_hp_string_primary"
+            android:layout_width="42dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_minus_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText,TextSizeCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_hp_plus_primary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_string_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_hp_minus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/minus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/minus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_plus_primary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/smarttanks_hp_string_secondary"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="34sp"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_minus_secondary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/smarttanks_hp_plus_secondary"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/blank"
+            android:contentDescription="@string/plus"
+            android:onClick="buttonsUtils"
+            android:src="@drawable/plus"
+            app:layout_constraintStart_toEndOf="@+id/smarttanks_hp_string_secondary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

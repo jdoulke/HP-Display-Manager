@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/monitors_display"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3FFFFFF"
+    android:textAlignment="center"
+    tools:context=".monitorFragment">
+
+    <ImageView
+        android:id="@+id/hp_logo"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0.5"
+        android:src="@drawable/hp_logo"
+        tools:ignore="ContentDescription" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_dynamic_primary70"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:menu="@menu/top_app_bar"
+            app:title="Monitors Display"
+            app:titleTextColor="@color/white" />
+
+        <TextView
+            android:id="@+id/manufacturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="Εταιρεία"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+        <TextView
+            android:id="@+id/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="20dp"
+            android:text="Πρωτεύων"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/manufacturer"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
+
+        <TextView
+            android:id="@+id/secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Δευτερεύων"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/primary"
+            app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+            tools:ignore="HardcodedText" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/primary"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                tools:ignore="ExtraText">
+
+                <!-- others -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_others"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/others_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_lenovo"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/others_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_others"
+                    app:layout_constraintTop_toBottomOf="@+id/lenovo_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_others"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_others"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_lenovo"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_others"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/others_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_lenovo"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/others_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_others"
+                    app:layout_constraintTop_toBottomOf="@+id/lenovo_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_others"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/others_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_lenovo"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/others_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Others"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lenovo_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- Lenovo -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_lenovo"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lenovo_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_msi"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/lenovo_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_lenovo"
+                    app:layout_constraintTop_toBottomOf="@+id/msi_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_lenovo"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_lenovo"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_msi"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_lenovo"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/lenovo_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_msi"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/lenovo_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_lenovo"
+                    app:layout_constraintTop_toBottomOf="@+id/msi_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_lenovo"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/lenovo_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_msi"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/lenovo_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Lenovo"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/msi_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- MSI -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_msi"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/msi_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_benq"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/msi_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_msi"
+                    app:layout_constraintTop_toBottomOf="@+id/benq_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_msi"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_msi"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_benq"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_msi"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/msi_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_benq"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/msi_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_msi"
+                    app:layout_constraintTop_toBottomOf="@+id/benq_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_msi"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/msi_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_benq"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/msi_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="MSI"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/benq_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- benq -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_benq"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/benq_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_acer"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/benq_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_benq"
+                    app:layout_constraintTop_toBottomOf="@+id/acer_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_benq"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_benq"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_acer"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_benq"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/benq_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_acer"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/benq_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_benq"
+                    app:layout_constraintTop_toBottomOf="@+id/acer_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_benq"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/benq_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_acer"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/benq_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="BenQ"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/acer_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- acer -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_acer"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/acer_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_aoc"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/acer_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_acer"
+                    app:layout_constraintTop_toBottomOf="@+id/aoc_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_acer"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_acer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_aoc"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_acer"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/acer_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_aoc"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/acer_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_acer"
+                    app:layout_constraintTop_toBottomOf="@+id/aoc_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_acer"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/acer_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_aoc"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/acer_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Acer"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aoc_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- aoc -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_aoc"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/aoc_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_philips"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/aoc_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_aoc"
+                    app:layout_constraintTop_toBottomOf="@+id/philips_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_aoc"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_aoc"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_philips"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_aoc"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/aoc_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_philips"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/aoc_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_aoc"
+                    app:layout_constraintTop_toBottomOf="@+id/philips_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_aoc"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/aoc_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_philips"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/aoc_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="AOC"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/philips_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- philips -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_philips"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/philips_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_samsung"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/philips_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_philips"
+                    app:layout_constraintTop_toBottomOf="@+id/samsung_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_philips"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_philips"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_samsung"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_philips"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/philips_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_samsung"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/philips_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_philips"
+                    app:layout_constraintTop_toBottomOf="@+id/samsung_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_philips"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/philips_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_samsung"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/philips_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Philips"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/samsung_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- samsung -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_samsung"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/samsung_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_dell"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/samsung_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_samsung"
+                    app:layout_constraintTop_toBottomOf="@+id/dell_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_samsung"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_samsung"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_dell"
+                    tools:ignore="ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_samsung"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/samsung_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_dell"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/samsung_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_samsung"
+                    app:layout_constraintTop_toBottomOf="@+id/dell_primary_monitor_string"
+                    tools:ignore="HardcodedText,TextSizeCheck" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_samsung"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/samsung_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_dell"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/samsung_manufacturer"
+                    android:layout_width="84dp"
+                    android:layout_height="46dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Samsung"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dell_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+                <!-- dell -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_dell"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dell_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_asus" />
+
+                <TextView
+                    android:id="@+id/dell_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_dell"
+                    app:layout_constraintTop_toBottomOf="@+id/asus_secondary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_dell"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_dell"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_asus"
+                    tools:ignore="ImageContrastCheck" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_dell"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/dell_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_asus" />
+
+                <TextView
+                    android:id="@+id/dell_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_dell"
+                    app:layout_constraintTop_toBottomOf="@+id/asus_primary_monitor_string"
+                    tools:ignore="HardcodedText" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_dell"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/dell_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_asus" />
+
+                <TextView
+                    android:id="@+id/dell_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Dell"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/asus_manufacturer"
+                    tools:ignore="HardcodedText" />
+
+
+                <!-- asus -->
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_asus"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/asus_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_lg" />
+
+                <TextView
+                    android:id="@+id/asus_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_asus"
+                    app:layout_constraintTop_toBottomOf="@+id/lg_secondary_monitor_string" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_asus"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_asus"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_lg" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_asus"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/asus_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_lg" />
+
+                <TextView
+                    android:id="@+id/asus_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_asus"
+                    app:layout_constraintTop_toBottomOf="@+id/lg_primary_monitor_string" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_asus"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/asus_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_lg"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/asus_manufacturer"
+                    android:layout_width="74dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="Asus"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lg_manufacturer" />
+
+                <!-- lg -->
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_lg"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/lg_primary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_primary_monitor_hp" />
+
+                <TextView
+                    android:id="@+id/lg_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_lg"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_primary_monitor_string" />
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_lg"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/lg_manufacturer"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_primary_monitor_hp"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/lg_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="LG"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_manufacturer" />
+
+                <!-- hp and utils -->
+
+                <ImageButton
+                    android:id="@+id/minus_primary_monitor_hp"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/hp_manufacturer"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_hp"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_hp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/minus_secondary_monitor_lg"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/minus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/minus"
+                    app:layout_constraintStart_toEndOf="@+id/plus_primary_monitor_lg"
+                    app:layout_constraintTop_toBottomOf="@+id/minus_secondary_monitor_hp" />
+
+                <TextView
+                    android:id="@+id/hp_primary_monitor_string"
+                    android:layout_width="42dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="@string/hp_primary_string"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_primary_monitor_hp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/hp_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:text="@string/hp_secondary_string"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_hp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lg_secondary_monitor_string"
+                    android:layout_width="40dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toEndOf="@+id/minus_secondary_monitor_lg"
+                    app:layout_constraintTop_toBottomOf="@+id/hp_secondary_monitor_string" />
+
+                <ImageButton
+                    android:id="@+id/plus_primary_monitor_hp"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintStart_toEndOf="@+id/hp_primary_monitor_string"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_hp"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/hp_secondary_monitor_string"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/plus_secondary_monitor_lg"
+                    android:layout_width="60dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/blank"
+                    android:contentDescription="@string/plus"
+                    android:onClick="buttonsUtils"
+                    android:src="@drawable/plus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/lg_secondary_monitor_string"
+                    app:layout_constraintTop_toBottomOf="@+id/plus_secondary_monitor_hp" />
+
+                <TextView
+                    android:id="@+id/hp_manufacturer"
+                    android:layout_width="70dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:text="HP"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:background="#F3F3F3"
+            android:visibility="invisible"
+            app:itemIconTint="@color/material_dynamic_primary70"
+            app:itemTextColor="@color/material_dynamic_primary70"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:menu="@menu/bottom_nav_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
